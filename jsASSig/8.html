@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time</title>
+    <style>
+      body{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color:  #000;
+        color: #fff;
+        height: 100vh;
+      }
+      #cl{
+       font-size: larger;
+       font-weight: bold;
+       border: 1px,solid,#ffffff;
+       padding: 2px;
+       
+      }
+    </style>
+</head>
+<body>
+    <div id="cl">
+        <p>jay shree ram</p>
+    </div>
+    <script>
+        function updateclock(){
+            const now =new Date();
+            const hours=String(now.getHours()).padStart(2,'0');
+            const minutes=String(now.getMinutes()).padStart(2,'0');
+            const second=String(now.getSeconds()).padStart(2,'0');
+        
+            const updString=`${hours}:${minutes}:${second}`;
+            document.getElementById('cl').textContent=`${hours}:${minutes}:${second}`;
+            document.body.style.backgroundColor=`#${hours}${minutes}${second}`;
+             
+        }
+        updateclock(); 
+        setInterval(updateclock,1000);
+        
+    </script>
+</body>
+</html>

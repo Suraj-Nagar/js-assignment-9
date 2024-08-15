@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <div class="pa">
+        <button id="log1">Login</button>
+        <button id="log2">Logout</button>
+        <h2 id="st">User Has Not logged In</h2>
+    </div>
+    <script>
+          function updateStatus() {
+            const statusElement = document.getElementById('st');
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+            if (isLoggedIn) {
+                statusElement.textContent = 'You are logged in.';
+            } else {
+                statusElement.textContent = 'You are not logged in.';
+            }
+        }
+        const b1=document.getElementById('log1');
+        const b2=document.getElementById('log2');
+        const pa=document.getElementById('o');
+        b1.addEventListener('click',()=>{
+            localStorage.setItem('isLoggedIn', 'true');
+            updateStatus();
+        });
+        b2.addEventListener('click',()=>{
+            localStorage.removeItem('isLoggedIn');
+            updateStatus();
+        });
+        updateStatus();
+    </script>
+</body>
+</html>

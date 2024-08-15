@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question seventh</title>
+</head>
+<body>
+    <input type="text" id="search" placeholder="Search for items"/>
+    <h3>Results:</h3>
+    <ul>
+        <li class="listt">HTML</li>
+        <li class="listt">CSS</li>
+        <li class="listt">Tailwind CSS</li>
+        <li class="listt">GitHub</li>
+        <li class="listt">JavaScript</li>
+    </ul>
+    <script>
+     const input=document.getElementById("search")
+     const list = document.querySelectorAll('.listt')
+     input.addEventListener('input',display);
+     function display(){
+        const fvalue=input.value.toLowerCase();
+       list.forEach(element => {
+             const item=element.textContent.toLowerCase();
+            if(item.includes(fvalue)){
+                element.style.display="block";
+
+            }else{
+                element.style.display='none';
+                
+            }
+        });
+     
+    }
+    </script>
+</body>
+</html>
